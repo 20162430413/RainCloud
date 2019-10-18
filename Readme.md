@@ -1,4 +1,4 @@
-# *RainCloud*                                     ![]( [https://img.shields.io/badge/RainCloud-V%200.0.1--AMBER-yellowgreen](https://img.shields.io/badge/RainCloud-V 0.0.1--AMBER-yellowgreen) )
+# *RainCloud*                                     [![](https://img.shields.io/badge/RainCloud-V0.0.1--AMBER-yellowgreen)](https://github.com/20162430413/RainCloud)
 
 
 
