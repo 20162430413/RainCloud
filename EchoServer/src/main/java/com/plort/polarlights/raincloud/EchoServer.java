@@ -38,11 +38,11 @@ public class EchoServer {
 		EventLoopGroup group = new NioEventLoopGroup();
 		
 		try {
-			ServerBootstrap b = new ServerBootstrap();
-			ServerBootstrap b2 = b.group(group);
-			ServerBootstrap b3 = b2.channel(NioServerSocketChannel.class);
-			ServerBootstrap b4 = b3.localAddress(new InetSocketAddress(port));
-			b4.childHandler(new ChannelInitializer<SocketChannel>() {
+			ServerBootstrap b = new ServerBootstrap()
+					.group(group)
+					.channel(NioServerSocketChannel.class)
+					.localAddress(new InetSocketAddress(port))
+					.childHandler(new ChannelInitializer<SocketChannel>() {
 				public void initChannel(SocketChannel ch) {
 					ChannelPipeline pipeline = ch.pipeline();
 					pipeline.addLast(serverHandler);
