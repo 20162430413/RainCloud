@@ -18,15 +18,6 @@ public class EchoServer {
 	public EchoServer(int port) {
 		this.port = port;
 	}
-
-	public static void main(String[] args) {
-		try {
-			new EchoServer(5555).start();
-		}catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("main exception.");
-		}
-	}
 	
 	/**
 	 * bootstrap:引导，引导程序，启动，自举
