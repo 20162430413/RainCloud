@@ -6,6 +6,11 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.util.CharsetUtil;
 
+/**
+ * dumplicate: 复制，重写，再做一次
+ * @author huayu
+ *
+ */
 public class Test {
 
 	public static void main(String[] args){
@@ -28,9 +33,9 @@ public class Test {
 		 */
 		Random r = new Random();
 		int a2 = r.nextInt();
-		Character c = '的';
+//		Character c = '的';
+//		System.out.println(Integer.toBinaryString((int)c));
 		
-		System.out.println();
 		while(buf.isReadable()){
 			System.out.print((char)buf.readByte());
 		}
@@ -45,5 +50,25 @@ public class Test {
 			directBuf.getBytes(directBuf.readerIndex(), a);
 			System.out.println("readableBytes: "+length+" a.length: "+a.length);
 		}
+		
+		ByteBuf sliceBuf = Unpooled.copiedBuffer("I'm a person! How are you?",CharsetUtil.UTF_8);
+		ByteBuf slicedBuf = sliceBuf.slice(0,13);
+		System.out.println("slicedBuf :"+slicedBuf.toString(CharsetUtil.UTF_8));
+		slicedBuf.setByte(0,(byte)'J');
+		System.out.println("sliceBuf: "+sliceBuf.toString(CharsetUtil.UTF_8));
+		ByteBuf copiedBuf = sliceBuf.copy(14,sliceBuf.readableBytes());
+		copiedBuf.setByte(0, (byte)'Y');
+		System.out.println("copiedBuf: "+copiedBuf.toString(CharsetUtil.UTF_8)); 
+		System.out.println("sliceBuf: "+sliceBuf.toString(CharsetUtil.UTF_8));
+		
+		/**
+		 * 引用计数
+		 */
+		assert sliceBuf.refCnt() != 1;
+		System.out.println("引用计数： "+sliceBuf.refCnt()+";"+slicedBuf.refCnt()+";"+copiedBuf.refCnt());
+		sliceBuf.release();
+		System.out.println("引用计数： "+sliceBuf.refCnt()+";"+slicedBuf.refCnt()+";"+copiedBuf.refCnt());
+
+		
 	}
 }
