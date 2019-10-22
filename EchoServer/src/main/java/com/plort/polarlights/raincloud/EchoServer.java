@@ -11,9 +11,13 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-public class EchoServer {
+public class EchoServer implements Server{
 	
-	private final int port;
+	private int port = 5555;
+	
+	public EchoServer() {
+		
+	}
 	
 	public EchoServer(int port) {
 		this.port = port;

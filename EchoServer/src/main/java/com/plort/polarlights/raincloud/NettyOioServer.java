@@ -18,7 +18,7 @@ import io.netty.channel.oio.OioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.oio.OioServerSocketChannel;
 
-public class NettyOioServer {
+public class NettyOioServer implements Server{
 	
 	int port = 5556;
 	
