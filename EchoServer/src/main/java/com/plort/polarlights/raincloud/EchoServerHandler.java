@@ -35,6 +35,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter{
 			public void operationComplete(ChannelFuture future) throws Exception {
 				if(future.isSuccess()) {
 					System.out.println("write successfully!");
+					future.channel().close();
 				}else {
 					System.out.println("write failed!!");
 					future.cause().printStackTrace();
