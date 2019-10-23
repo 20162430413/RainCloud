@@ -13,6 +13,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.jar.plugin-version>3.3.3</maven.jar.plugin-version>
 	</properties>
 	
 	<build>
