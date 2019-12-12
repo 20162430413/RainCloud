@@ -23,5 +23,5 @@
 
 ## Copyright information
 
-​    **Copyright © 2019 Polrts PloarLights Incorporated. All rights reserved.**
+​    **Copyright © 2019 All rights reserved.**
 
